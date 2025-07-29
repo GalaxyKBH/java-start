@@ -6,17 +6,17 @@ public class ProductAdminEx {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String[] productNames = new String[10];
-        int[] productPrices = new int[10];
+        int maxProducts = 10;
+        String[] productNames = new String[maxProducts];
+        int[] productPrices = new int[maxProducts];
         int productCount = 0;
 
         while (true) {
-            System.out.println("1. 상품등록 | 2. 상품 목록 | 3. 종료");
-            System.out.print("메뉴를 선택하세요:");
+            System.out.println("1. 상품등록 | 2. 상품 목록 | 3. 종료\n메뉴를 선택하세요:");
             int type = sc.nextInt();
             sc.nextLine();
             if (type == 1) {
-                if (productCount == 10) {
+                if (productCount >= maxProducts) {
                     System.out.println("더 이상 상품을 등록할 수 없습니다.");
                 } else {
                     System.out.print("상품 이름을 입력하세요:");
